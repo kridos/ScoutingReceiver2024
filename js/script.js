@@ -76,7 +76,8 @@ function onScanSuccess(decodedText, decodedResult) {
     const table = document.querySelector("table");
     console.log(table.rows.length + " vs. " + maxRows);
     if (table && table.rows.length < maxRows) {
-        
+        //console.log("ADDING");
+
         const dataArray = decodedText.split(",");
 
         // Get a reference to the table (if it exists)
@@ -96,18 +97,27 @@ function onScanSuccess(decodedText, decodedResult) {
         table.appendChild(row);
 
         // Increment maxRows to allow one more row on next scan
-        
+
 
         // Hide scanner and stop after successful scan
-        scannerElement.style.display = "none";
-        html5QrcodeScanner.stop().then(() => {
-            console.log("Scanner stopped successfully");
-        }).catch(err => {
-            console.error("Error stopping scanner:", err);
-        });
+        closeScanner();
+    } else {
+        decodedText = "";
     }
+}
+
+function closeScanner() {
+    scannerElement.style.display = "none";
+    html5QrcodeScanner.stop().then(() => {
+        console.log("Scanner stopped successfully");
+    }).catch(err => {
+        console.error("Error stopping scanner:", err);
+    });
 }
 
 function onScanFailure(error) {
     console.warn(`Code scan error = ${error}`);
+    if (table && table.rows.length >= maxRows) {
+        closeScanner();
+    }
 }
