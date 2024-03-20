@@ -1,4 +1,3 @@
-
 const button = document.getElementById("scan");
 const scannerElement = document.getElementById("reader");
 
@@ -20,22 +19,20 @@ Html5Qrcode.getCameras().then(devices => {
   });
 
 const tableLabels = [
-    "Team Number",
-    "Team Name",
-    "Where Intake",
-    "Where Score",
-    "Pref Auto Start",
-    "Where Score Auto",
-    "Max Notes in Amp Auto",
-    "Max Notes in Speaker Auto",
-    "Type of Strategy",
-    "Primary TeleOp Score Location",
-    "Avg TeleOp Scored Notes",
-    "Preferred HP Location",
-    "Can Climb",
-    "Approx Climb Time",
-    "Can Harmonize",
-    "Can Trap"
+    "Team 1",
+    "Team 2",
+    "Team 3",
+    "Amp Auto Notes",
+    "Speaker Auto Notes",
+    "Amp Tele Notes",
+    "Speaker Tele Notes",
+    "Can Trap",
+    "Team 1 Harmonize",
+    "Team 2 Harmonize",
+    "Team 3 Harmonize",
+    "Team 1 Climb",
+    "Team 2 Climb",
+    "Team 3 Climb"
 ];
 
 
