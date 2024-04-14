@@ -5,6 +5,12 @@ const scannerElement = document.getElementById("reader");
 let html5QrCode = new Html5Qrcode(/* element id */ "reader"); // Declare scanner outside button click
 let maxRows = 1; // Maximum allowed rows (starts at 1)
 var cameraId;
+window.onbeforeunload = function (event) {
+    // Optional: Set a message to display in the browser's default prompt
+    event.returnValue = "Are you sure you want to leave? Any unsaved changes will be lost.";
+    // Chrome and some other browsers might still ignore the return value
+    return "Are you sure you want to leave? Any unsaved changes will be lost.";
+};
 
 Html5Qrcode.getCameras().then(devices => {
     /**
@@ -47,6 +53,7 @@ if (!table) {
 
     // Create table header row
     const headerRow = document.createElement("tr");
+   
 
     // Loop through each label and create a table header cell
     tableLabels.forEach(label => {
@@ -57,7 +64,6 @@ if (!table) {
 
     // Add the header row to the table
     table.appendChild(headerRow);
-
     // Add the table to the body
     document.body.appendChild(table);
 }
