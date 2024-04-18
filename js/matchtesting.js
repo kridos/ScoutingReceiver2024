@@ -29,7 +29,6 @@ const tableLabels = [
     "Team 3",
     "Amp Auto Notes",
     "Speaker Auto Notes",
-    "Extra amp info",
     "Amp Tele Notes",
     "Speaker Tele Notes",
     "Can Trap",
@@ -38,8 +37,7 @@ const tableLabels = [
     "Team 3 Harmonize",
     "Team 1 Climb",
     "Team 2 Climb",
-    "Team 3 Climb",
-    "Extra Teleop info"
+    "Team 3 Climb"
 ];
 
 
