@@ -4,12 +4,10 @@ const scannerElement = document.getElementById("reader");
 let html5QrCode = new Html5Qrcode(/* element id */ "reader"); // Declare scanner outside button click
 let maxRows = 1; // Maximum allowed rows (starts at 1)
 var cameraId;
-window.onbeforeunload = function (event) {
-    // Optional: Set a message to display in the browser's default prompt
-    event.returnValue = "Are you sure you want to leave? Any unsaved changes will be lost.";
-    // Chrome and some other browsers might still ignore the return value
-    return "Are you sure you want to leave? Any unsaved changes will be lost.";
-  };
+document.body.addEventListener(onbeforeunload, (test) -> {
+
+}
+
 Html5Qrcode.getCameras().then(devices => {
     /**
      * devices would be an array of objects of type:
@@ -29,6 +27,7 @@ const tableLabels = [
     "Team 3",
     "Amp Auto Notes",
     "Speaker Auto Notes",
+    "Extra Auto Info",
     "Amp Tele Notes",
     "Speaker Tele Notes",
     "Can Trap",
@@ -37,7 +36,8 @@ const tableLabels = [
     "Team 3 Harmonize",
     "Team 1 Climb",
     "Team 2 Climb",
-    "Team 3 Climb"
+    "Team 3 Climb",
+    "Extra Teleop Info"
 ];
 
 
