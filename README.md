@@ -43,4 +43,4 @@ The Crescendo Receiver is a desktop application (or web-based interface) designe
 This receiver application is an integral part of a larger scouting ecosystem. It works in conjunction with the **Crescendo Scout Mobile App**, which is used by team members to collect scouting data offline and generate the QR codes.
 
 You can find the repository for the Crescendo Scout Mobile App here:
-<https://github.com/kridos/CrescendoScoutApp>
+<https://github.com/kridos/ScoutingApp2024>
